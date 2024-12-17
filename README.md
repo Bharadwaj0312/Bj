@@ -29,3 +29,19 @@ pipeline {
  }
  }
 }
+
+
+(gitcommands)
+vim Sample.java
+public class Sample {
+    public static void main(String[] args) {
+        System.out.println("Hello, I am Bharadwaj !");
+    }
+}
+
+git add .
+git commit -m "Sample java program with content bharadwaj 
+gut remote add origin
+git branch -M main
+git push -u origin main
+
