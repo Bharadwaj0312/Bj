@@ -1,47 +1,51 @@
-(app js) -
-const express = require('express');
-const app = express();
-app.get('/',(req,res) => {
-res.send("Hello World, I am from Nodejs");
-});
-app.listen(3020,() => {
-console.log("Server is running on port 3020")
-});
+import 'package:flutter/material.dart';
 
-(pipeline for app.js)
-pipeline {
- agent any
- stages {
- stage('Clone Repository') {
- steps {
- git branch: 'main', url: 'https://github.com/deepak574/nodejsexample.git'
- }
- }
- stage('Install Dependencies') {
- steps {
- bat 'npm install'
- }
- }
- stage('Run Application') {
- steps {
- bat 'node app.js'
- }
- }
- }
+void main() {
+  runApp(MyApp());
 }
 
-
-(gitcommands)
-vim Sample.java
-public class Sample {
-    public static void main(String[] args) {
-        System.out.println("Hello, I am Bharadwaj !");
-    }
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Row Widget Layout Example'),
+        ),
+        body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround, // Space evenly between children
+            crossAxisAlignment: CrossAxisAlignment.center, // Center children vertically
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.home, size: 50, color: Colors.blue),
+                  SizedBox(height: 8), // Space between icon and text
+                  Text('Home'),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.search, size: 50, color: Colors.green),
+                  SizedBox(height: 8),
+                  Text('Search'),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.settings, size: 50, color: Colors.red),
+                  SizedBox(height: 8),
+                  Text('Settings'),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
-
-git add .
-git commit -m "Sample java program with content bharadwaj 
-gut remote add origin
-git branch -M main
-git push -u origin main
 
